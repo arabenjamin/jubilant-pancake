@@ -34,7 +34,6 @@ func clientHash(req *http.Request) string {
 
 func ping(resp http.ResponseWriter, req *http.Request) {
 
-	log_req(req)
 	thisRequest := map[string]interface{}{
 		"time":           time.Now(),
 		"client_address": req.RemoteAddr,
@@ -48,6 +47,7 @@ func ping(resp http.ResponseWriter, req *http.Request) {
 		"this_request": thisRequest,
 	}
 
+	log_req(req)
 	respond(resp, thisResponse)
 	return
 }
