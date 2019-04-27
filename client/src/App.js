@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './geogebra-export.svg';
+import logo from './fol.svg';
 import './App.css';
 
 class App extends Component {
