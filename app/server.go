@@ -29,7 +29,7 @@ func clientHash(req *http.Request) string {
 	hash := md5.New()
 	clientString := fmt.Sprintf("%v%v%v%v", req.RemoteAddr, req.URL.Path, req.Header["User-Agent"], time.Now())
 	io.WriteString(hash, clientString)
-	return fmt.Sprintf("%x\n", hash.Sum(nil))
+	return fmt.Sprintf("%x", hash.Sum(nil))
 }
 
 func ping(resp http.ResponseWriter, req *http.Request) {
