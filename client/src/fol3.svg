@@ -10,31 +10,43 @@
    <!--north&southpoles-->
    <circle id="svg_2" stroke="#000000" opacity="0.25" r="50" cy="100" cx="150" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#0c4e6d"/>
    <circle id="svg_3" stroke="#000000" opacity="0.25" r="50" cy="200" cx="150" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#0c4e6d"/>
+
+    <!--UPPER-WIMGS-->
+   <circle id="svg_26" stroke="#000000" opacity="0.25" r="50"  cy="75" cx="105" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#0c4e6d"/>
+   <circle id="svg_26" stroke="#000000" opacity="0.25" r="50"  cy="75" cx="195" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#0c4e6d"/>
+    <!--lower-wings-->
+    <circle id="svg_26" stroke="#000000" opacity="0.25" r="50"  cy="225" cx="105" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#0c4e6d"/>
+    <circle id="svg_26" stroke="#000000" opacity="0.25" r="50"  cy="225" cx="195" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#0c4e6d"/>
+
     <!--right-->
    <circle id="svg_4" stroke="#000000" opacity="0.25" r="50" cy="125" cx="193" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#0c4e6d"/>
    <circle id="svg_5" stroke="#000000" opacity="0.25" r="50" cy="175" cx="193" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#0c4e6d"/>
+   <!--outer-->
+   <circle id="svg_26" stroke="#000000" opacity="0.25" r="50"  cy="150" cx="63" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#0c4e6d"/>
+
    <!--left-->
    <circle id="svg_6" stroke="#000000" opacity="0.25" r="50" cy="125" cx="107" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#0c4e6d"/>
    <circle id="svg_7" stroke="#000000" opacity="0.25" r="50" cy="175" cx="107" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#0c4e6d"/>
-   <circle stroke="#000000" opacity=".25" r="50" id="svg_22" cy="150" cx="237" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#0c4e6d"/>
-
+   <!--outer-->
+   <circle id="svg_25" stroke="#000000" opacity="0.25" r="50"  cy="150" cx="237" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#0c4e6d"/>
+   
    <!--dots-->
-   <circle stroke="#4286f4" opacity="1" r="1" id="svg_12" cy="150" cx="150" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
-   <circle stroke="#4286f4" opacity="1" r="1" id="svg_13" cy="100" cx="150" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
-   <circle stroke="#4286f4" opacity="1" r="1" id="svg_14" cy="200" cx="150" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
-   <circle stroke="#4286f4" opacity="1" r="1" id="svg_15" cy="125" cx="195" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
-   <circle stroke="#4286f4" opacity="1" r="1" id="svg_16" cy="175" cx="195" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
-   <circle stroke="#4286f4" opacity="1" r="1" id="svg_17" cy="125" cx="105" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
-   <circle stroke="#4286f4" opacity="1" r="1" id="svg_18" cy="175" cx="105" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
+   <circle id="svg_12" stroke="#4286f4" opacity="1" r="1" cy="150" cx="150" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
+   <circle id="svg_13" stroke="#4286f4" opacity="1" r="1" cy="100" cx="150" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
+   <circle id="svg_14" stroke="#4286f4" opacity="1" r="1" cy="200" cx="150" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
+   <circle id="svg_15" stroke="#4286f4" opacity="1" r="1" cy="125" cx="195" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
+   <circle id="svg_16" stroke="#4286f4" opacity="1" r="1" cy="175" cx="195" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
+   <circle id="svg_17" stroke="#4286f4" opacity="1" r="1" cy="125" cx="105" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
+   <circle id="svg_18" stroke="#4286f4" opacity="1" r="1" cy="175" cx="105" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
 
-   <circle stroke="#4286f4" opacity="1" r="1" id="svg_19" cy="75" cx="105" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
-   <circle stroke="#4286f4" opacity="1" r="1" id="svg_20" cy="75" cx="195" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
+   <circle id="svg_19" stroke="#4286f4" opacity="1" r="1" cy="75" cx="105" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
+   <circle id="svg_20" stroke="#4286f4" opacity="1" r="1" cy="75" cx="195" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
 
-   <circle stroke="#4286f4" opacity="1" r="1" id="svg_21" cy="150" cx="63" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
-   <circle stroke="#4286f4" opacity="1" r="1" id="svg_22" cy="150" cx="237" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
+   <circle id="svg_21" stroke="#4286f4" opacity="1" r="1" cy="150" cx="63" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
+   <circle id="svg_22" stroke="#4286f4" opacity="1" r="1" cy="150" cx="237" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
 
-   <circle stroke="#4286f4" opacity="1" r="1" id="svg_19" cy="225" cx="105" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
-   <circle stroke="#4286f4" opacity="1" r="1" id="svg_20" cy="225" cx="195" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
+   <circle id="svg_13" stroke="#4286f4" opacity="1" r="1" cy="225" cx="105" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
+   <circle id="svg_24" stroke="#4286f4" opacity="1" r="1" cy="225" cx="195" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ffffff"/>
 
 
   </g>
