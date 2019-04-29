@@ -44,6 +44,7 @@ func ping(resp http.ResponseWriter, req *http.Request) {
 
 	thisResponse := map[string]interface{}{
 		"status":       "ok",
+		"message":      "pong!",
 		"this_request": thisRequest,
 	}
 
