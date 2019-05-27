@@ -11,7 +11,7 @@ import (
 
 /* log the response */
 func logReq(req *http.Request) {
-	fmt.Printf("[%v] [%v] [%v] [%v %v] %v\n", time.Now(), req.RemoteAddr, req.Method, req.Proto, req.URL.Path, req.Header["User-Agent"])
+	fmt.Printf("[%v] [%v] [%v] [%v %v] %v\n", time.Now().Unix(), req.RemoteAddr, req.Method, req.Proto, req.URL.Path, req.Header["User-Agent"])
 	/*TODO: return request hashmap */
 }
 
@@ -27,7 +27,7 @@ func respond(res http.ResponseWriter, payload map[string]interface{}) {
 
 func clientHash(req *http.Request) string {
 	hash := md5.New()
-	clientString := fmt.Sprintf("%v%v%v%v", req.RemoteAddr, req.URL.Path, req.Header["User-Agent"], time.Now())
+	clientString := fmt.Sprintf("%v%v%v%v", req.RemoteAddr, req.URL.Path, req.Header["User-Agent"], time.Now().Unix())
 	io.WriteString(hash, clientString)
 	return fmt.Sprintf("%x", hash.Sum(nil))
 }
@@ -35,7 +35,7 @@ func clientHash(req *http.Request) string {
 func ping(resp http.ResponseWriter, req *http.Request) {
 
 	thisRequest := map[string]interface{}{
-		"time":           time.Now(),
+		"time":           time.Now().Unix(),
 		"client_address": req.RemoteAddr,
 		"resource":       req.URL.Path,
 		"user_agent":     req.Header["User-Agent"],
