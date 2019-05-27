@@ -10,18 +10,18 @@ import (
 )
 
 /* log the response */
-func log_req(req *http.Request) {
+func logReq(req *http.Request) {
 	fmt.Printf("[%v] [%v] [%v] [%v %v] %v\n", time.Now(), req.RemoteAddr, req.Method, req.Proto, req.URL.Path, req.Header["User-Agent"])
 	/*TODO: return request hashmap */
 }
 
 func respond(res http.ResponseWriter, payload map[string]interface{}) {
 
-	thisJson, _ := json.Marshal(payload)
+	thisJSON, _ := json.Marshal(payload)
 	res.Header().Set("Content-Type", "application/json")
 	res.Header().Set("Access-Control-Allow-Origin", "*")
 	res.WriteHeader(http.StatusOK)
-	res.Write(thisJson)
+	res.Write(thisJSON)
 
 }
 
@@ -48,7 +48,7 @@ func ping(resp http.ResponseWriter, req *http.Request) {
 		"this_request": thisRequest,
 	}
 
-	log_req(req)
+	logReq(req)
 	respond(resp, thisResponse)
 	return
 }
