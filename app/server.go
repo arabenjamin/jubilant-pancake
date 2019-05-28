@@ -5,14 +5,30 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
+	"os"
 	"time"
 )
+
+type Middleware func(http.HandlerFunc) http.HandlerFunc
 
 /* log the response */
 func logReq(req *http.Request) {
 	fmt.Printf("[%v] [%v] [%v] [%v %v] %v\n", time.Now().Unix(), req.RemoteAddr, req.Method, req.Proto, req.URL.Path, req.Header["User-Agent"])
 	/*TODO: return request hashmap */
+}
+
+func logger(thisLogger *log.Logger) Middleware {
+
+	return func(next http.HandlerFunc) http.HandlerFunc {
+		return func(w http.ResponseWriter, r *http.Request) {
+			defer func() {
+				thisLogger.Println(r.URL.Path, time.Now().Unix())
+			}()
+			next(w, r)
+		}
+	}
 }
 
 func respond(res http.ResponseWriter, payload map[string]interface{}) {
@@ -53,11 +69,22 @@ func ping(resp http.ResponseWriter, req *http.Request) {
 	return
 }
 
+func Chain(f http.HandlerFunc, middlewares ...Middleware) http.HandlerFunc {
+
+	for _, m := range middlewares {
+		f = m(f)
+	}
+	return f
+}
+
 func main() {
 
 	fmt.Println("Starting WebApp")
-	mux := http.NewServeMux()
-	mux.HandleFunc("/ping", ping)
-	http.ListenAndServe(":8080", mux)
 
+	thisLogger := log.New(os.Stdout, "http: ", log.LstdFlags)
+	thisLogger.Println("Starting server...")
+
+	mux := http.NewServeMux()
+	mux.HandleFunc("/ping", Chain(ping, logger(thisLogger)))
+	http.ListenAndServe(":8080", mux)
 }
