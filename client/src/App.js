@@ -153,6 +153,10 @@ function Button(props){
 function Icon2(props){
 
   console.log(props);
+  if (props.blinks.length>0){
+    console.log(Math.cos(90));
+  }
+  
 
   const circles = props.blinks.map( (blink, i) =>
     
