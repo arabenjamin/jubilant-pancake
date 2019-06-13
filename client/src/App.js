@@ -157,11 +157,10 @@ function Icon2(props){
   var blinks = props.blinks.length;
   
   var nodes = [];
-  var angle;
   var width = 300;
 
   for (let i=0; i<blinks; i++){
-    angle = (i /(blinks/2)) * Math.PI;
+    let angle = (i /(blinks/2)) * Math.PI;
     let x = (props.blinks[i].radius * Math.cos(angle)) + (width/2); // Calculate the x position of the element.
     let y = (props.blinks[i].radius * Math.sin(angle)) + (width/2);
     console.log(x,y);
@@ -182,14 +181,6 @@ function Icon2(props){
 
   )
 
-
-  /*
-  const circles = props.blinks.map( (blink, i) =>
-    
-    <React.Fragment key={i}>
-      <circle id={i}  stroke="#000000" opacity="0.25" r={blink.radius}  cy={blink.y} cx={blink.x} strokeLinecap="null" strokeLinejoin="null" strokeDasharray="null" strokeWidth="5" fill="#19a01b"/>
-    </React.Fragment>
-  )*/
 
   return(
 
