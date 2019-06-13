@@ -153,23 +153,51 @@ function Button(props){
 function Icon2(props){
 
   console.log(props);
-  if (props.blinks.length>0){
-    console.log(Math.cos(90));
-  }
-  
 
+  var blinks = props.blinks.length;
+  
+  var nodes = [];
+  var angle;
+  var width = 300;
+
+  for (let i=0; i<blinks; i++){
+    angle = (i /(blinks/2)) * Math.PI;
+    let x = (props.blinks[i].radius * Math.cos(angle)) + (width/2); // Calculate the x position of the element.
+    let y = (props.blinks[i].radius * Math.sin(angle)) + (width/2);
+    console.log(x,y);
+    let node = {
+        'id':i,
+        'x':x, 
+        'y':y,
+        'radius': props.blinks[i].radius
+    };
+    nodes.push(node);
+  }
+
+  const dots = nodes.map( (dot) =>
+
+    <React.Fragment key={dot.id}>
+      <circle id={dot.id} stroke="#4286f4" opacity="1" r={dot.radius/50} cy={dot.y} cx={dot.x} strokeLinecap="null" strokeLinejoin="null" strokDasharray="null" strokeWidth="5" fill="#ffffff"/>
+    </React.Fragment>
+
+  )
+
+
+  /*
   const circles = props.blinks.map( (blink, i) =>
     
     <React.Fragment key={i}>
       <circle id={i}  stroke="#000000" opacity="0.25" r={blink.radius}  cy={blink.y} cx={blink.x} strokeLinecap="null" strokeLinejoin="null" strokeDasharray="null" strokeWidth="5" fill="#19a01b"/>
     </React.Fragment>
-  )
+  )*/
 
   return(
 
-    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" >
+    <svg width={width} height={width} xmlns="http://www.w3.org/2000/svg" >
       <g>
-        {circles}
+        <circle id="svg_10" stroke="#000000" opacity="0.25" r="50"  cy="150" cx="150" strokeLinecap="null" strokeLinejoin="null" strokDasharray="null" strokeWidth="5" fill="#19a01b"/>
+        
+        {dots}
       </g>
     </svg>
 
