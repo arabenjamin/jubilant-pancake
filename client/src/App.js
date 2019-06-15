@@ -91,7 +91,7 @@ class App extends Component {
           hasBlinked = {this.state.hasBlinked} 
           hasError = {this.state.hasError}
         />
-        <Icon />
+        
         <Icon2 blinks = {this.state.blinks}/>
       </div>
     );
@@ -160,10 +160,10 @@ function Icon2(props){
   var width = 300;
 
   for (let i=0; i<blinks; i++){
+
     let angle = (i /(blinks/2)) * Math.PI;
-    let x = (props.blinks[i].radius * Math.cos(angle)) + (width/2); // Calculate the x position of the element.
+    let x = (props.blinks[i].radius * Math.cos(angle)) + (width/2);
     let y = (props.blinks[i].radius * Math.sin(angle)) + (width/2);
-    console.log(x,y);
     let node = {
         'id':i,
         'x':x, 
@@ -174,27 +174,21 @@ function Icon2(props){
   }
 
   const dots = nodes.map( (dot) =>
-
     <React.Fragment key={dot.id}>
-      <circle id={dot.id} stroke="#4286f4" opacity="1" r={dot.radius/50} cy={dot.y} cx={dot.x} strokeLinecap="null" strokeLinejoin="null" strokDasharray="null" strokeWidth="5" fill="#ffffff"/>
+      <circle id={dot.id} stroke="#000000" opacity=".25" r={dot.radius} cy={dot.y} cx={dot.x} strokeLinecap="null" strokeLinejoin="null" strokDasharray="null" strokeWidth="5" fill="#0c4e6d"/>
+      <circle id={dot.id} stroke="#000000" opacity=".25" r={dot.radius/dot.radius} cy={dot.y} cx={dot.x} strokeLinecap="null" strokeLinejoin="null" strokDasharray="null" strokeWidth="5" fill="#0c4e6d"/>
     </React.Fragment>
-
   )
-
 
   return(
-
-    <svg width={width} height={width} xmlns="http://www.w3.org/2000/svg" >
+    <svg className="icon2" width={width} height={width} xmlns="http://www.w3.org/2000/svg" >
       <g>
-        <circle id="svg_10" stroke="#000000" opacity="0.25" r="50"  cy="150" cx="150" strokeLinecap="null" strokeLinejoin="null" strokDasharray="null" strokeWidth="5" fill="#19a01b"/>
-        
+        <circle id="base_circle" stroke="#000000" opacity="0.25" r="50"  cy={width/2} cx={width/2} strokeLinecap="null" strokeLinejoin="null" strokDasharray="null" strokeWidth="5" fill="#19a01b"/>
         {dots}
+        <circle id="top_circle" stroke="#000000" opacity="0.1" r="100"  cy={width/2} cx={width/2} strokeLinecap="null" strokeLinejoin="null" strokDasharray="null" strokeWidth="5" fill="#19a01b"/>
       </g>
     </svg>
-
-
   )
-
 }
 
 function Icon(){

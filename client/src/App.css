@@ -7,6 +7,12 @@
   height: 40vmin;
   pointer-events: none;
 }
+/*
+.icon2 {
+  animation: icon2-spin infinite 60s linear;
+  height: 40vmin;
+  pointer-events: none;
+}*/
 
 .App-header {
   background-color: #282c34;
@@ -31,3 +37,13 @@
     transform: rotate(360deg);
   }
 }
+
+/*
+@keyframes icon2-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}*/
