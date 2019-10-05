@@ -77,6 +77,7 @@ class App extends Component {
           <p>
            Ara Sheperdigian
           </p>
+          <MyCv data={this.state.name} />
           <a
             className="App-link"
             href="/"
@@ -86,6 +87,7 @@ class App extends Component {
             Learn More
           </a>
         </header>
+        
         <Button  
           handleClick = {this.handleSubmit}
           hasPosted = {this.state.hasPosted}
@@ -97,6 +99,7 @@ class App extends Component {
         <MyLogo />
 
         <MyName data={this.state.name}/>
+        <MyCv data={this.state.name} />
       </div>
     );
   }
@@ -248,6 +251,22 @@ function MyName(props){
 
 }
 
+function MyCv(props){
 
+  console.log(props);
+  return(
+
+    <div className="card w-75 text-white bg-dark mb-3">
+      <div className="card-body">
+        <h5 className="card-title">Ara Sheperdigian</h5>
+        <h6 className="card-subtitle mb-2 text-muted">Software Developer</h6>
+        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" className="card-link">Card link</a>
+        <a href="#" className="card-link">Another link</a>
+      </div>
+    </div>
+  )
+
+}
 
 export default App;
