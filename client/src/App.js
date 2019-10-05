@@ -18,7 +18,8 @@ class App extends Component {
       hasError: false,
       hasBlinked: 0,
       data: null,
-      blinks: []
+      blinks: [],
+      name: "Ara Sheperdigian"
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -94,6 +95,8 @@ class App extends Component {
         
         <Icon2 blinks = {this.state.blinks}/>
         <MyLogo />
+
+        <MyName data={this.state.name}/>
       </div>
     );
   }
@@ -301,5 +304,19 @@ function Icon(){
   )
 
 }
+
+function MyName(props){
+  var my_name = props.data;
+  console.log("Whats my name ?", my_name);
+  return(
+
+    <div>
+        <h1>{my_name}</h1>
+    </div>
+  )
+
+}
+
+
 
 export default App;
