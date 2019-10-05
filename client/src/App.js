@@ -74,10 +74,13 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-           Ara Sheperdigian
-          </p>
-          <MyCv data={this.state.name} />
+          <MyCv 
+            data={this.state.name} 
+            handleClick = {this.handleSubmit}
+            hasPosted = {this.state.hasPosted}
+            hasBlinked = {this.state.hasBlinked} 
+            hasError = {this.state.hasError}  
+          />
           <a
             className="App-link"
             href="/"
@@ -87,19 +90,30 @@ class App extends Component {
             Learn More
           </a>
         </header>
-        
-        <Button  
-          handleClick = {this.handleSubmit}
-          hasPosted = {this.state.hasPosted}
-          hasBlinked = {this.state.hasBlinked} 
-          hasError = {this.state.hasError}
-        />
-        
-        <Icon2 blinks = {this.state.blinks}/>
-        <MyLogo />
+        <div className="contianer">
+          <div className="row">
+            <div className="col">
+            <Button  
+              handleClick = {this.handleSubmit}
+              hasPosted = {this.state.hasPosted}
+              hasBlinked = {this.state.hasBlinked} 
+              hasError = {this.state.hasError}
+            />
+            
+            <Icon2 blinks = {this.state.blinks}/>
+            <MyLogo />
 
-        <MyName data={this.state.name}/>
-        <MyCv data={this.state.name} />
+            <MyName data={this.state.name}/>
+            <MyCv 
+              data={this.state.name} 
+              handleClick = {this.handleSubmit}
+              hasPosted = {this.state.hasPosted}
+              hasBlinked = {this.state.hasBlinked} 
+              hasError = {this.state.hasError}  
+            />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -255,14 +269,19 @@ function MyCv(props){
 
   console.log(props);
   return(
-
-    <div className="card w-75 text-white bg-dark mb-3">
+    
+    <div className="card w-75 text-white bg-dark mb-3 align-self-center">
       <div className="card-body">
         <h5 className="card-title">Ara Sheperdigian</h5>
         <h6 className="card-subtitle mb-2 text-muted">Software Developer</h6>
         <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" className="card-link">Card link</a>
-        <a href="#" className="card-link">Another link</a>
+        <a href="/" className="card-link">Card link</a>
+        <Button  
+          handleClick = {props.handleSubmit}
+          hasPosted = {props.hasPosted}
+          hasBlinked = {props.hasBlinked} 
+          hasError = {props.hasError}
+        />
       </div>
     </div>
   )
