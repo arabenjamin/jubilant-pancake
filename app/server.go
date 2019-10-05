@@ -11,6 +11,7 @@ import (
 	"time"
 )
 
+/*Middleware Go wants a comment */
 type Middleware func(http.HandlerFunc) http.HandlerFunc
 
 /* log the response */
@@ -69,6 +70,7 @@ func ping(resp http.ResponseWriter, req *http.Request) {
 	return
 }
 
+/*Chain handler*/
 func Chain(f http.HandlerFunc, middlewares ...Middleware) http.HandlerFunc {
 
 	for _, m := range middlewares {
