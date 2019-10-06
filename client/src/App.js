@@ -72,51 +72,50 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <MyCv 
-            data={this.state.name} 
-            handleClick = {this.handleSubmit}
-            hasPosted = {this.state.hasPosted}
-            hasBlinked = {this.state.hasBlinked} 
-            hasError = {this.state.hasError}  
-          />
-          <a
-            className="App-link"
-            href="/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn More
-          </a>
-        </header>
-        <div className="contianer">
-          <div className="row">
-            <div className="col">
-            <Button  
-              handleClick = {this.handleSubmit}
-              hasPosted = {this.state.hasPosted}
-              hasBlinked = {this.state.hasBlinked} 
-              hasError = {this.state.hasError}
-            />
-            
-            <Icon2 blinks = {this.state.blinks}/>
-            <MyLogo />
-
-            <MyName data={this.state.name}/>
-            <MyCv 
-              data={this.state.name} 
-              handleClick = {this.handleSubmit}
-              hasPosted = {this.state.hasPosted}
-              hasBlinked = {this.state.hasBlinked} 
-              hasError = {this.state.hasError}  
-            />
+        <div className="contianer-fluid">
+          <div className="row-fluid">
+            <div className="col-8 center">
+              <MyCv 
+                data={this.state.name}
+                blinks = {this.state.blinks} 
+                handleClick = {this.handleSubmit}
+                hasPosted = {this.state.hasPosted}
+                hasBlinked = {this.state.hasBlinked} 
+                hasError = {this.state.hasError}  
+              />
             </div>
           </div>
         </div>
       </div>
     );
   }
+}
+
+
+function TheHeader(props){
+
+  return(
+    <header className="App-header">
+      <img src={logo} className="App-logo" alt="logo" />
+      <MyCv 
+        data={this.state.name} 
+        handleClick = {this.handleSubmit}
+        hasPosted = {this.state.hasPosted}
+        hasBlinked = {this.state.hasBlinked} 
+        hasError = {this.state.hasError}  
+      />
+      <a
+        className="App-link"
+        href="/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Learn More
+      </a>
+    </header>
+
+  )
+
 }
 
 function Button(props){
@@ -267,21 +266,31 @@ function MyName(props){
 
 function MyCv(props){
 
-  console.log(props);
+  console.log("CV Props:",props);
   return(
-    
-    <div className="card w-75 text-white bg-dark mb-3 align-self-center">
-      <div className="card-body">
-        <h5 className="card-title">Ara Sheperdigian</h5>
-        <h6 className="card-subtitle mb-2 text-muted">Software Developer</h6>
-        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="/" className="card-link">Card link</a>
-        <Button  
-          handleClick = {props.handleSubmit}
-          hasPosted = {props.hasPosted}
-          hasBlinked = {props.hasBlinked} 
-          hasError = {props.hasError}
-        />
+
+    <div className="card  mb-3">
+      <div className="card-header"><MyName data={props.data}/></div>
+      <div className="row no-gutters">
+        <div className="col-md-4 border-right border-primary">
+          <Button  
+            handleClick = {props.handleClick}
+            hasPosted = {props.hasPosted}
+            hasBlinked = {props.hasBlinked} 
+            hasError = {props.hasError}
+          />
+        
+          <Icon2 blinks = {props.blinks}/>
+        </div>
+        <div class="col-md-8">
+          <div className="card-body">
+            <h5 className="card-title">Ara Sheperdigian</h5>
+            <h6 className="card-subtitle mb-2 text-muted">Software Developer</h6>
+            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="/" className="card-link">ara.benjamin@gmail.com</a>
+            <a href="/" className="card-link">https://github.com/arabenjamin </a>
+          </div>
+        </div>
       </div>
     </div>
   )
