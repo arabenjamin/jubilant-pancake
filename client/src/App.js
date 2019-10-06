@@ -71,10 +71,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App justify-content-center">
         <div className="contianer-fluid">
-          <div className="row-fluid">
-            <div className="col-8 center">
+          <div className="row-fluid justify-content-center">
+            <div className="col-8 center justify-content-center">
               <MyCv 
                 data={this.state.name}
                 blinks = {this.state.blinks} 
@@ -269,7 +269,7 @@ function MyCv(props){
   console.log("CV Props:",props);
   return(
 
-    <div className="card  mb-3">
+    <div className="card justify-content-center mb-3">
       <div className="card-header"><MyName data={props.data}/></div>
       <div className="row no-gutters">
         <div className="col-md-4 border-right border-primary">
