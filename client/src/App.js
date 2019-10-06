@@ -286,7 +286,8 @@ function MyCv(props){
           <div className="card-body">
             <h5 className="card-title">Ara Sheperdigian</h5>
             <h6 className="card-subtitle mb-2 text-muted">Software Developer</h6>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p className="card-text">I am an energetic, innovative and dependable business professional offering a rich mixture of experience and success in a variety of work environments. I have demonstrated leadership skills in my most recent role as well as proven to be a valuable team member in many of my positions.
+            </p>
             <a href="/" className="card-link">ara.benjamin@gmail.com</a>
             <a href="/" className="card-link">https://github.com/arabenjamin </a>
           </div>
