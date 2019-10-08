@@ -74,22 +74,26 @@ class App extends Component {
       
       <div className="App">
         
+        <div className="row-fluid">
 
-          <div className="row-fluid">
-            <NavBar />
-            <SideBar /> 
-                    
-            <div className="col-8 justify-content-center page-content">
-              <MyCvCard 
-                data={this.state.name}
-                blinks = {this.state.blinks} 
-                handleClick = {this.handleSubmit}
-                hasPosted = {this.state.hasPosted}
-                hasBlinked = {this.state.hasBlinked} 
-                hasError = {this.state.hasError}  
-              />
-            </div>
+          <NavBar />
+          <SideBar /> 
+                  
+          <div className="col-8 justify-content-center page-content">
+
+            <MyCvCard 
+              data={this.state.name}
+              blinks = {this.state.blinks} 
+              handleClick = {this.handleSubmit}
+              hasPosted = {this.state.hasPosted}
+              hasBlinked = {this.state.hasBlinked} 
+              hasError = {this.state.hasError}  
+            />
+
           </div>
+
+        </div>
+
       </div>
     );
   }
@@ -103,7 +107,7 @@ function PageFrame(props){
       <div className="container">
         <div className="row">
           <div className="col">
-
+            
           </div>
         </div>
       </div>
@@ -300,7 +304,7 @@ function MyLogo(props){
   )
 
   return(
-    <svg className="icon2 rounded-circle" width={width} height={width} xmlns="http://www.w3.org/2000/svg" >
+    <svg className="mylogo rounded-circle" width={width} height={width} xmlns="http://www.w3.org/2000/svg" >
       <g>
         <circle id="base_circle" stroke="#000000" opacity="0.25" r="50"  cy={width/2} cx={width/2} strokeLinecap="null" strokeLinejoin="null" strokDasharray="null" strokeWidth="5" fill="#19a01b"/>
         {dots}
