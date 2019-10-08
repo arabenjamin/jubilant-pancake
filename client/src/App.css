@@ -1,6 +1,7 @@
 
 body {
   font-size: .875rem;
+  font-family: Ubuntu Mono,monospace
 }
 
 .feather {
@@ -76,6 +77,16 @@ body {
 [role="main"] {
   padding-top: 48px; /* Space for fixed navbar */
 }
+
+/*
+* Card
+*/
+.card-text {
+
+  color:#9acc14
+
+}
+
 
 /*
  * Navbar

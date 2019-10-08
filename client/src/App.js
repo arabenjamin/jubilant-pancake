@@ -134,7 +134,7 @@ function NavBar(props){
 
 function SideBar(props){
 
-
+  // TODO: Make the sidebar dynamic for who's looking at it
 
   return(
     <nav className="col-md-2 d-none d-md-block bg-light sidebar">
@@ -332,7 +332,7 @@ function MyCvCard(props){
   console.log("CV Props:",props);
   return(
 
-    <div className="card justify-content-center mb-3">
+    <div className="card text-white bg-dark justify-content-center mb-3">
       <div className="card-header"><MyName data={props.data}/></div>
       <div className="row no-gutters">
         <div className="col-md-4 border-right border-primary">
