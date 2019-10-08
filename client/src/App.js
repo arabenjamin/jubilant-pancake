@@ -74,13 +74,13 @@ class App extends Component {
       
       <div className="App">
         
-        <div className="contianer">
+
           <div className="row-fluid">
             <NavBar />
-            <SideBar />
-            
-            <div className="col-8 justify-content-center">
-              <MyCv 
+            <SideBar /> 
+                    
+            <div className="col-8 justify-content-center page-content">
+              <MyCvCard 
                 data={this.state.name}
                 blinks = {this.state.blinks} 
                 handleClick = {this.handleSubmit}
@@ -90,7 +90,6 @@ class App extends Component {
               />
             </div>
           </div>
-        </div>
       </div>
     );
   }
@@ -116,8 +115,12 @@ function NavBar(props){
 
     return(
       <nav className="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+          <MyLogo  />
+          &nbsp; &nbsp;Ara Sheperdigian
+        </a>
         
-        <span className="navbar-text">
+        <span className="navbar-text justify-content-end">
           ara.benjamin@gmail.com
         </span>
       </nav> 
@@ -127,18 +130,24 @@ function NavBar(props){
 
 function SideBar(props){
 
+
+
   return(
-    <nav className="col-md-2 d-none d-md-block bg-dark text-white sidebar">
+    <nav className="col-md-2 d-none d-md-block bg-light sidebar">
       <div className="sticky-sidebar">
-        <ul className="nav flex-column">
-          <li className="nav-item">Dashboard</li>
-          <li className="nav-item">Home</li>
+        <ul className="nav flex-column list-group">
+          <li className="nav-item list-item">
+            <a className="nav-link" href="#">
+            Dashboard
+            </a>
+          </li>
+          <li className="nav-item list-item">
+            <a className="nav-link" href="#">Home</a> 
+          </li>
         </ul>
       </div>
     </nav>
   )
-
-
 }
 
 
@@ -147,7 +156,7 @@ function TheHeader(props){
   return(
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <MyCv 
+      <MyCvCard
         data={this.state.name} 
         handleClick = {this.handleSubmit}
         hasPosted = {this.state.hasPosted}
@@ -265,8 +274,8 @@ function MyLogo(props){
   
   var leaves = 6;
   var nodes = [];
-  var width = 300;
-  var radius = 50;
+  var width = 50;
+  var radius = 12.5;
 
   for (let i=0; i<leaves; i++){
 
@@ -291,7 +300,7 @@ function MyLogo(props){
   )
 
   return(
-    <svg className="icon2" width={width} height={width} xmlns="http://www.w3.org/2000/svg" >
+    <svg className="icon2 rounded-circle" width={width} height={width} xmlns="http://www.w3.org/2000/svg" >
       <g>
         <circle id="base_circle" stroke="#000000" opacity="0.25" r="50"  cy={width/2} cx={width/2} strokeLinecap="null" strokeLinejoin="null" strokDasharray="null" strokeWidth="5" fill="#19a01b"/>
         {dots}
@@ -314,7 +323,7 @@ function MyName(props){
 
 }
 
-function MyCv(props){
+function MyCvCard(props){
 
   console.log("CV Props:",props);
   return(
