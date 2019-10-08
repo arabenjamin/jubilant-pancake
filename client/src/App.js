@@ -71,10 +71,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App justify-content-center">
-        <div className="contianer-fluid">
-          <div className="row-fluid justify-content-center">
-            <div className="col-8 center justify-content-center">
+      
+      <div className="App">
+        
+        <div className="contianer">
+          <div className="row-fluid">
+            <NavBar />
+            <SideBar />
+            
+            <div className="col-8 justify-content-center">
               <MyCv 
                 data={this.state.name}
                 blinks = {this.state.blinks} 
@@ -89,6 +94,51 @@ class App extends Component {
       </div>
     );
   }
+}
+
+
+function PageFrame(props){
+
+  return(
+
+      <div className="container">
+        <div className="row">
+          <div className="col">
+
+          </div>
+        </div>
+      </div>
+  )
+}
+
+
+function NavBar(props){
+
+    return(
+      <nav className="navbar navbar-dark bg-dark">
+        
+        <span className="navbar-text">
+          ara.benjamin@gmail.com
+        </span>
+      </nav> 
+    )
+
+}
+
+function SideBar(props){
+
+  return(
+    <nav className="col-md-2 d-none d-md-block bg-dark text-white sidebar">
+      <div className="sticky-sidebar">
+        <ul className="nav flex-column">
+          <li className="nav-item">Dashboard</li>
+          <li className="nav-item">Home</li>
+        </ul>
+      </div>
+    </nav>
+  )
+
+
 }
 
 
@@ -282,7 +332,7 @@ function MyCv(props){
         
           <Icon2 blinks = {props.blinks}/>
         </div>
-        <div class="col-md-8">
+        <div className="col-md-8">
           <div className="card-body">
             <h5 className="card-title">Ara Sheperdigian</h5>
             <h6 className="card-subtitle mb-2 text-muted">Software Developer</h6>
