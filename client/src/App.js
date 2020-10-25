@@ -89,7 +89,7 @@ class App extends Component {
               hasBlinked = {this.state.hasBlinked} 
               hasError = {this.state.hasError}  
             />
-
+            <TerminalCard props={this.state}/>
           </div>
 
         </div>
@@ -352,13 +352,32 @@ function MyCvCard(props){
             <p className="card-text">I am an energetic, innovative and dependable business professional offering a rich mixture of experience and success in a variety of work environments. I have demonstrated leadership skills in my most recent role as well as proven to be a valuable team member in many of my positions.
             </p>
             <a href="/" className="card-link">ara.benjamin@gmail.com</a>
-            <a href="/" className="card-link">https://github.com/arabenjamin </a>
+            <a href="/" className="card-link">https://github.com/arabenjamin</a>
           </div>
         </div>
       </div>
     </div>
   )
 
+}
+
+function TerminalCard (props){
+    console.log("Starting Termincal with these Properties", props);
+
+    return(
+
+        <div className="card text-white bg-dark justify-content-center mb-3">
+           <div className="card-header"> Terminal </div>
+           <div className="card-body">
+              <div>
+                <ul className="list-group">
+                  <li className="list-group-item"></li>
+                </ul>
+              </div>
+              <input className="form-control bg-dark" type="text" />
+           </div>
+        </div>
+    )
 }
 
 export default App;

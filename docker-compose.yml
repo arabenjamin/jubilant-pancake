@@ -1,14 +1,38 @@
 version: "3.8"
+x-args: &args
+  - UID
 
+x-env_file: &env_file
+  - .env
 
 services:
   app:
     build:
       context: .
-      dockerfile: app/Dockerfile
+      dockerfile: Dockerfile-app
     ports: 
       - "8080:8080"
-    #image: golang:onbuild
+    #volumes:
+      #- ${PROJECT_ROOT}/app:.
+      #- type: bind
+        #target: ${PROJECT_ROOT}/app
+        #  target: /home/arabenjamin/.space/neptune/go_projects/src/arabenjamin/jubilant-pancake/app
+        # source: .
 
-#    client:
-#        dockerfile: client/Dockerfile
+  client: 
+    env_file: ".env"
+    build:
+      context: ${PROJECT_ROOT}/client
+      dockerfile: ${PROJECT_ROOT}/client/${CLIENT_DOCKERFILE}
+        #dockerfile: ${PROJECT_ROOT}/client/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      #- "./client: client/"
+      - ${PROJECT_ROOT}/client:/client:cached
+      - '/client/node_modules'
+        #- type: bind
+        #target: . 
+        #target: client
+        #source: ${PROJECT_ROOT}/client
+
