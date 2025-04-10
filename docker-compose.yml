@@ -9,7 +9,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile-app
+      dockerfile: ${PROJECT_ROOT}/app/${APP_DOCKERFILE}
     ports: 
       - "8080:8080"
     #volumes:
